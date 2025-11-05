@@ -1,6 +1,10 @@
 body {
   font-family: Arial, sans-serif;
-  background: #f2f2f2;
+  background-image: url('Shrekkk.jpg'); 
+    background-repeat: no-repeat; 
+    background-size: cover; 
+    background-position: center; 
+    background-attachment: fixed;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -9,7 +13,7 @@ body {
 }
 
 .calculator {
-  background: #fff;
+  background: #1A1D2E;
   padding: 20px;
   border-radius: 16px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
