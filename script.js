@@ -1,21 +1,14 @@
 const screen = document.getElementById('screen');
-const modeDisplay = document.getElementById('modeDisplay');
 let currentValue = '';
 let mode = '';
 
 function updateScreen() {
-  if (currentValue === '') {
-    screen.textContent = '0';
+  if (!mode) {
+    screen.textContent = 'Select mode';
+  } else if (currentValue === '') {
+    screen.textContent = mode === 'inchToCm' ? 'Inch → Cm' : 'Cm → Inch';
   } else {
     screen.textContent = currentValue;
-  }
-
-  if (!mode) {
-    modeDisplay.textContent = 'Select mode';
-  } else if (mode === 'inchToCm') {
-    modeDisplay.textContent = 'Inch → Cm';
-  } else if (mode === 'cmToInch') {
-    modeDisplay.textContent = 'Cm → Inch';
   }
 }
 
@@ -45,7 +38,7 @@ document.querySelectorAll('.button').forEach(button => {
         screen.textContent = result.toFixed(2);
         currentValue = '';
       }
-    } else if (!['C', '⌫'].includes(value)) {
+    } else {
       currentValue += value;
       updateScreen();
     }
