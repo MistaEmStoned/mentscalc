@@ -21,6 +21,14 @@ body {
   max-width: 360px;
 }
 
+.mode-display {
+  text-align: right;
+  font-size: 0.9em;
+  color: #555;
+  margin-bottom: 5px;
+  height: 18px;
+}
+
 .screen {
   width: 100%;
   height: 60px;
