@@ -1,105 +1,117 @@
 body {
-    background-color: #f3f1e8;
-    color: #241610;
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
+  font-family: Arial, sans-serif;
+  background: #f2f2f2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
 }
 
-header {
-    background-color: #f3f1e8;
-    padding: 20px;
-    display: flex;
-    justify-content: space-between;
-    border-bottom: 2px solid #896049;
-    position: sticky;
-    top: 0;
+.calculator {
+  background: #fff;
+  padding: 20px;
+  border-radius: 16px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  width: 90%;
+  max-width: 360px;
 }
 
-.logo h1 {
-    margin: 0;
-    font-size: 24px;
+.screen {
+  width: 100%;
+  height: 60px;
+  background: #e6e6e6;
+  border-radius: 10px;
+  text-align: right;
+  font-size: 2em;
+  padding: 10px;
+  box-sizing: border-box;
+  margin-bottom: 10px;
+  overflow-x: auto;
 }
 
-nav ul {
-    list-style: none;
-    display: flex;
-    margin: 0;
-    padding: 0;
+/* Top section (conversion + clearing buttons) */
+.top-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+  flex-wrap: wrap;
 }
 
-nav ul li {
-    margin-left: 20px;
+.values {
+  display: flex;
+  gap: 5px;
+  flex: 0.6; /* Slightly smaller than before */
 }
 
-nav ul li a {
-    text-decoration: none;
-    color: #241610;
+.values button {
+  flex: 1;
+  padding: 10px;
+  font-size: 1em;
+  border: none;
+  border-radius: 8px;
+  background: #007bff;
+  color: #fff;
+  text-align: center;
 }
 
-nav ul li a:hover {
-    color: #b7916a;
-    border-bottom: 2px solid #b7916a;
+#clearing {
+  display: flex;
+  gap: 5px;
+  flex: 0.5; /* Takes more width */
+  justify-content: space-between;
+  
 }
 
-main {
-    width: 90%;
-    margin: 20px auto;
+#clearing button {
+  flex: 1;
+  height: 37px;
+  font-size: 1em;
+  border: 4px solid white;
+  border-radius: 8px;
+  background: #dc3545;
+  color: white;
+  text-align: center;
 }
 
-section {
-    padding: 30px 0;
-    border-bottom: 1px dashed #896049;
+/* Calculator buttons */
+.button-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
 }
 
-h2 {
-    font-size: 28px;
-    border-bottom: 2px solid #b7916a;
-    display: inline-block;
-    padding-bottom: 5px;
-    margin-bottom: 20px;
+.button {
+  background: #eee;
+  text-align: center;
+  padding: 15px 0;
+  border-radius: 8px;
+  font-size: 1.5em;
+  user-select: none;
+  cursor: pointer;
 }
 
-#home {
-    text-align: center;
+.button:active {
+  background: #ccc;
 }
 
-.hero img {
-    width: 180px;
-    height: 180px;
-    border-radius: 50%;
-    object-fit: cover;
-    border: 4px solid #a67b5b;
-    box-shadow: 0 0 12px rgba(0, 0, 0, 0.2);
-    margin-bottom: 15px;
-}
+/* Mobile responsiveness */
+@media (max-width: 400px) {
+  .calculator {
+    padding: 15px;
+  }
 
-.hero h1 {
-    font-size: 36px;
-    color: #b7916a;
-}
+  .values button,
+  #clearing button {
+    font-size: 0.9em;
+    padding: 8px;
+  }
 
-.hero h2 {
-    font-size: 20px;
-    color: #896049;
-}
-
-.button-primary,
-.button-secondary {
-    padding: 10px 20px;
-    text-decoration: none;
-    border-radius: 5px;
-    font-weight: bold;
-    border: 2px solid #b7916a;
-    margin: 5px;
-}
-
-.button-primary {
-    background-color: #b7916a;
-    color: #241610;
-}
-
-.button-primary:hover {
+  .screen {
+    font-size: 1.8em;
+  }
+}.button-primary:hover {
     background-color: #896049;
     color: #f3f1e8;
 }
