@@ -36,6 +36,10 @@ body {
   min-height: 60px;
 }
 
+.screen p {
+  font-size: .08rem;
+}
+
 .top-row {
   display: flex;
   justify-content: space-between;
