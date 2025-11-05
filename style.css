@@ -17,8 +17,9 @@ body {
   border-radius: 16px;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
   padding: 20px;
-  width: 90%;
-  max-width: 400px;
+  width: 95%;
+  max-width: none;
+  height: 90vh;
   display: flex;
   flex-direction: column;
   gap: 16px;
@@ -30,7 +31,7 @@ body {
   text-align: right;
   padding: 18px;
   border-radius: 10px;
-  font-size: 2rem;
+  font-size: 2.5rem;
   overflow: hidden;
   word-wrap: break-word;
   min-height: 60px;
@@ -61,14 +62,18 @@ body {
   transition: background 0.2s;
 }
 
+.values button{
+  background-color: blue;
+}
+
 #clearing button {
   border: 4px solid #1A1D2E;
   background-color: red;
 }
 
 .values button:active,
-#clearing button:active {
-  background-color: blue;
+ #clearing button:active {
+  background-color: #55608A;
 }
 
 .button-container {
@@ -80,8 +85,8 @@ body {
 .button {
   background-color: #39405F;
   color: white;
-  font-size: 1.5rem;
-  padding: 20px;
+  font-size: 1.8rem;
+  padding: 28px;
   text-align: center;
   border-radius: 10px;
   cursor: pointer;
