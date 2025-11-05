@@ -1,10 +1,6 @@
 body {
   font-family: Arial, sans-serif;
-  background-image: url('Shrekkk.jpg'); 
-    background-repeat: no-repeat; 
-    background-size: cover; 
-    background-position: center; 
-    background-attachment: fixed;
+  background: #f2f2f2;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -13,20 +9,12 @@ body {
 }
 
 .calculator {
-  background: #1A1D2E;
+  background: #fff;
   padding: 20px;
   border-radius: 16px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
   width: 90%;
   max-width: 360px;
-}
-
-.mode-display {
-  text-align: right;
-  font-size: 0.9em;
-  color: #555;
-  margin-bottom: 5px;
-  height: 18px;
 }
 
 .screen {
@@ -40,54 +28,55 @@ body {
   box-sizing: border-box;
   margin-bottom: 10px;
   overflow-x: auto;
+  color: #333;
 }
 
-/* Top section (conversion + clearing buttons) */
 .top-row {
   display: flex;
   justify-content: space-between;
   align-items: center;
   margin-bottom: 10px;
-  flex-wrap: wrap;
 }
 
 .values {
   display: flex;
   gap: 5px;
-  flex: 0.6; /* Slightly smaller than before */
-}
-
-.values button {
-  flex: 1;
-  padding: 10px;
-  font-size: 1em;
-  border: none;
-  border-radius: 8px;
-  background: #007bff;
-  color: #fff;
-  text-align: center;
+  flex: 2;
 }
 
 #clearing {
   display: flex;
   gap: 5px;
-  flex: 0.5; /* Takes more width */
-  justify-content: space-between;
-  
+  flex: 1;
+}
+
+.values button,
+#clearing button {
+  flex: 1;
+  height: 42px;
+  font-size: 1em;
+  border: none;
+  border-radius: 8px;
+  color: #fff;
+  cursor: pointer;
+}
+
+.values button {
+  background: #007bff;
 }
 
 #clearing button {
-  flex: 1;
-  height: 37px;
-  font-size: 1em;
-  border: 4px solid #1A1D2E;
-  border-radius: 8px;
   background: #dc3545;
-  color: white;
-  text-align: center;
 }
 
-/* Calculator buttons */
+.values button:active {
+  background: #0056b3;
+}
+
+#clearing button:active {
+  background: #a71d2a;
+}
+
 .button-container {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -106,20 +95,4 @@ body {
 
 .button:active {
   background: #ccc;
-}
-
-/* Mobile responsiveness */
-@media (max-width: 400px) {
-  .calculator {
-    padding: 15px;
   }
-
-  .values button,
-  #clearing button {
-    font-size: 0.9em;
-    padding: 8px;
-  }
-
-  .screen {
-    font-size: 1.8em;
-}
