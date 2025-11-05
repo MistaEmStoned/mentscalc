@@ -1,75 +1,64 @@
 const screen = document.getElementById('screen');
 let currentValue = '';
-let mode = '';
+let mode = ''; // no mode at start
 
-function updateScreen() {
-  if (!mode) {
-    screen.textContent = 'Select mode';
-  } else if (currentValue === '') {
-    screen.textContent = mode === 'inchToCm' ? 'Inch → Cm' : 'Cm → Inch';
-  } else {
-    screen.textContent = currentValue;
-  }
-}
-
+// Mode buttons
 document.getElementById('inchToCm').addEventListener('click', () => {
   mode = 'inchToCm';
+  screen.textContent = 'Inch → Cm';
   currentValue = '';
-  updateScreen();
 });
 
 document.getElementById('cmToInch').addEventListener('click', () => {
   mode = 'cmToInch';
+  screen.textContent = 'Cm → Inch';
   currentValue = '';
-  updateScreen();
 });
 
+// Clear button
+document.getElementById('clear').addEventListener('click', () => {
+  currentValue = '';
+  screen.textContent = mode === 'inchToCm' ? 'Inch → Cm' : mode === 'cmToInch' ? 'Cm → Inch' : 'Select mode';
+});
+
+// Backspace with long-press
+const backspace = document.getElementById('backspace');
+let backspaceHold;
+
+backspace.addEventListener('mousedown', () => {
+  backspaceHold = setInterval(() => {
+    currentValue = currentValue.slice(0, -1);
+    screen.textContent = currentValue || (mode ? (mode === 'inchToCm' ? 'Inch → Cm' : 'Cm → Inch') : 'Select mode');
+  }, 100);
+});
+
+backspace.addEventListener('mouseup', () => clearInterval(backspaceHold));
+backspace.addEventListener('mouseleave', () => clearInterval(backspaceHold));
+
+backspace.addEventListener('click', () => {
+  currentValue = currentValue.slice(0, -1);
+  screen.textContent = currentValue || (mode ? (mode === 'inchToCm' ? 'Inch → Cm' : 'Cm → Inch') : 'Select mode');
+});
+
+// Number and equals buttons
 document.querySelectorAll('.button').forEach(button => {
   button.addEventListener('click', () => {
     const value = button.textContent;
 
     if (value === '=') {
-      if (!mode || currentValue === '') return;
       const num = parseFloat(currentValue);
-      if (!isNaN(num)) {
+      if (!isNaN(num) && mode) {
         let result = 0;
         if (mode === 'inchToCm') result = num * 2.54;
-        else result = num / 2.54;
+        else if (mode === 'cmToInch') result = num / 2.54;
         screen.textContent = result.toFixed(2);
         currentValue = '';
+      } else {
+        screen.textContent = 'Select mode';
       }
     } else {
       currentValue += value;
-      updateScreen();
+      screen.textContent = currentValue;
     }
   });
 });
-
-document.getElementById('clear').addEventListener('click', () => {
-  currentValue = '';
-  updateScreen();
-});
-
-// Backspace with long press
-const backspaceBtn = document.getElementById('backspace');
-let backspaceInterval;
-
-function backspaceAction() {
-  currentValue = currentValue.slice(0, -1);
-  updateScreen();
-}
-
-backspaceBtn.addEventListener('mousedown', () => {
-  backspaceAction();
-  backspaceInterval = setInterval(backspaceAction, 100);
-});
-backspaceBtn.addEventListener('mouseup', () => clearInterval(backspaceInterval));
-backspaceBtn.addEventListener('mouseleave', () => clearInterval(backspaceInterval));
-backspaceBtn.addEventListener('touchstart', (e) => {
-  e.preventDefault();
-  backspaceAction();
-  backspaceInterval = setInterval(backspaceAction, 100);
-});
-backspaceBtn.addEventListener('touchend', () => clearInterval(backspaceInterval));
-
-updateScreen();
