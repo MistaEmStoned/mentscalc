@@ -1,64 +1,78 @@
+/* Base mobile-first design */
 body {
   font-family: Arial, sans-serif;
-  background: #f2f2f2;
+  background-image: url('Shrekkk.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
   display: flex;
   justify-content: center;
   align-items: center;
   height: 100vh;
   margin: 0;
+  padding: 0 10px;
 }
 
 .calculator {
-  background: #fff;
+  background: #1A1D2E;
   padding: 20px;
-  border-radius: 16px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-  width: 90%;
-  max-width: 360px;
+  border-radius: 20px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  width: 100%;
+  max-width: 340px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
 }
 
 .screen {
   width: 100%;
-  height: 60px;
+  height: 70px;
   background: #e6e6e6;
   border-radius: 10px;
   text-align: right;
   font-size: 2em;
   padding: 10px;
   box-sizing: border-box;
-  margin-bottom: 10px;
   overflow-x: auto;
   color: #333;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
 }
 
 .top-row {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 10px;
+  gap: 10px;
+  flex-wrap: wrap;
 }
 
 .values {
   display: flex;
-  gap: 5px;
-  flex: 2;
+  gap: 6px;
+  flex: 1.5;
 }
 
 #clearing {
   display: flex;
-  gap: 5px;
+  gap: 6px;
   flex: 1;
 }
 
 .values button,
 #clearing button {
   flex: 1;
-  height: 42px;
+  height: 50px;
   font-size: 1em;
   border: none;
-  border-radius: 8px;
+  border-radius: 10px;
   color: #fff;
   cursor: pointer;
+  font-weight: bold;
+  transition: background 0.2s;
 }
 
 .values button {
@@ -67,6 +81,7 @@ body {
 
 #clearing button {
   background: #dc3545;
+  border: 4px solid #1A1D2E;
 }
 
 .values button:active {
@@ -86,13 +101,33 @@ body {
 .button {
   background: #eee;
   text-align: center;
-  padding: 15px 0;
-  border-radius: 8px;
-  font-size: 1.5em;
+  padding: 18px 0;
+  border-radius: 10px;
+  font-size: 1.6em;
   user-select: none;
   cursor: pointer;
+  color: #1A1D2E;
+  font-weight: bold;
+  transition: background 0.2s;
 }
 
 .button:active {
   background: #ccc;
+}
+
+/* Larger screens */
+@media (min-width: 600px) {
+  .calculator {
+    max-width: 400px;
   }
+
+  .screen {
+    height: 80px;
+    font-size: 2.2em;
+  }
+
+  .button {
+    font-size: 1.8em;
+    padding: 20px 0;
+  }
+      }
