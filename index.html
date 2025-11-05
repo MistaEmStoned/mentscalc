@@ -1,113 +1,85 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kim Sagguit | ICT Portfolio</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Measurement Calculator</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+  <div class="calculator">
+    <div class="screen" id="screen"></div>
 
-    <header>
-        <div class="logo">
-            <h1>KIM</h1>
-        </div>
-        <nav>
-            <ul>
-                <li><a href="#home">Home</a></li>
-                <li><a href="#about">About Me</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
+  <div class="top-row">
+      <div class="values">
+        <button id="inchToCm">Inches → Cm</button>
+        <button id="cmToInch">Cm → Inches</button>
+      </div>
 
-    <main>
-        <section id="home">
-            <div class="hero">
-                <img src="images/kim.jpg" alt="me">
-                <h1>Hi, I'm Kim Sagguit.</h1>
-                <h2>Grade 12 ICT Student | Hard Working</h2>
-                <p>
-                    Welcome to my programming portfolio. I am a Grade 12 student who focuses on building simple and user-friendly applications using Java, HTML, CSS, and JavaScript.
-                </p>
-                <p class="cta">
-                    <a href="#projects" class="button-primary">View My Projects</a>
-                    <a href="#contact" class="button-secondary">Get In Touch</a>
-                </p>
-            </div>
-        </section>
+      <div id="clearing">
+        <button id="clear">C</button>
+        <button id="backspace">⌫</button>
+      </div>
+  </div>
 
-        <section id="about">
-            <h2>About Me</h2>
-            <p>
-                I am a dedicated Grade 12 student specializing in ICT Programming at Informatics Baguio. I work hard and stay focused on finishing what I start.
-            </p>
-            <p>
-                I started coding in Grade 11 with Java. It was difficult at first, but I kept learning and improving through practice and patience.
-            </p>
-            <p>
-                I aim to apply what I learn in real projects and internships that help me grow as a programmer.
-            </p>
-        </section>
+    <div class="button-container">
+      <div class="button">1</div>
+      <div class="button">2</div>
+      <div class="button">3</div>
+      <div class="button">4</div>
+      <div class="button">5</div>
+      <div class="button">6</div>
+      <div class="button">7</div>
+      <div class="button">8</div>
+      <div class="button">9</div>
+      <div class="button">.</div>
+      <div class="button">0</div>
+      <div class="button" id="equal">=</div>
+    </div>
+  </div>
 
-       <section id="projects">
-    <h2>My Portfolio Projects</h2>
-    <p>These are some of my Java and web development projects.</p>
-<div class="clearfix">
-    <article class="project-card-left">
-        <h3>1. Simple ATM Simulation (Java)</h3>
-        <p>A console-based ATM program where users can check balance, deposit, and withdraw.</p>
-        <p><strong>Technologies:</strong> Java</p>
-        <img src="images/atm.png" alt="ATM Simulation Screenshot" class="project-image">
-    </article>
-
-    <article class="project-card-right">
-        <h3>2. BMI Calculator (Java)</h3>
-        <p>Calculates BMI based on height and weight and gives health feedback.</p>
-        <p><strong>Technologies:</strong> Java</p>
-        <img src="images/bmicalc.jpg" alt="BMI Calculator Screenshot" class="project-image">
-    </article>
-
-    <article class="project-card-left">
-        <h3>3. Number Guessing Game (Java)</h3>
-        <p>A game where the user guesses a random number. It gives hints if the guess is too high or too low.</p>
-        <p><strong>Technologies:</strong> Java</p>
-        <img src="images/gtn.jpg" alt="Number Guessing Game Screenshot" class="project-image">
-    </article>
-
-    <article class="project-card-right">
-        <h3>4. Simple Blog Layout (HTML/CSS)</h3>
-        <p>A basic blog page using semantic HTML and clean CSS styling.</p>
-        <p><strong>Technologies:</strong> HTML, CSS</p>
-        <img src="images/blg.jpg" alt="Blog Layout Screenshot" class="project-image">
-    </article>
-
-    <article class="project-card-left">
-        <h3>5. CSS Calendar Layout</h3>
-        <p>A calendar layout made with HTML and CSS Grid.</p>
-        <p><strong>Technologies:</strong> HTML, CSS Grid</p>
-        <img src="images/calaendar.jpg" alt="Calendar Screenshot" class="project-image">
-    </article>
-</div>
-</section>
-
-
-        <section id="contact">
-            <h2>Contact</h2>
-            <div class="contact-details">
-                <p>Email: <a href="mailto:kimsagguit@gmail.com">kimsagguit@gmail.com</a></p>
-                <p>Facebook: <a href="https://facebook.com/" target="_blank">Kim Sagguit</a></p>
-            </div>
-            <div class="message-prompt">
-                <p>Let’s work together or share project ideas.</p>
-            </div>
-        </section>
-    </main>
-
-    <footer>
-        <p>&copy; 2025 Kim S. Sagguit. All Rights Reserved.</p>
-    </footer>
-
+<script src="script.js" defer></script>
 </body>
-</html>
+</html><!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Measurement Calculator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="calculator">
+    <div class="screen" id="screen"></div>
+
+  <div class="top-row">
+      <div class="values">
+        <button id="inchToCm">Inches → Cm</button>
+        <button id="cmToInch">Cm → Inches</button>
+      </div>
+
+      <div id="clearing">
+        <button id="clear">C</button>
+        <button id="backspace">⌫</button>
+      </div>
+  </div>
+
+    <div class="button-container">
+      <div class="button">1</div>
+      <div class="button">2</div>
+      <div class="button">3</div>
+      <div class="button">4</div>
+      <div class="button">5</div>
+      <div class="button">6</div>
+      <div class="button">7</div>
+      <div class="button">8</div>
+      <div class="button">9</div>
+      <div class="button">.</div>
+      <div class="button">0</div>
+      <div class="button" id="equal">=</div>
+    </div>
+  </div>
+
+<script src="script.js" defer></script>
+</body>
+            </html>
